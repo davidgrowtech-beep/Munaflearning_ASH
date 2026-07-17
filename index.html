@@ -123,13 +123,13 @@ fbq('track', 'PageView');
         e.preventDefault();
         const targetUrl = e.currentTarget.href || TELEGRAM_URL;
 
-        if (typeof fbq !== 'undefined') {
-            fbq('track', 'Lead', {
-                content_name: 'Telegram Community',
-                button_click: true
-            }, {
-                eventID: 'telegram_subscribe_' + Date.now()
-            });
+        if (typeof fbq !== 'undefined') { 
+        fbq('track', 'Lead', { 
+        content_name: 'Telegram Community', 
+        button_click: true,
+        value: 0.00,
+        currency: 'INR'
+    });
         } else {
             console.warn("fbq is not defined. Tracking skipped.");
         }
